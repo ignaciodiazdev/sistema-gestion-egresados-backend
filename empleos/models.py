@@ -4,9 +4,10 @@ from django.db import models
 
 class Empleo(models.Model):
     titulo = models.CharField(max_length=255)
-    descripcion = models.TextField()
+    modalidad = models.CharField(max_length=255, default='No Registrado')
     empresa = models.CharField(max_length=255)
     ubicacion = models.CharField(max_length=255)
+    descripcion = models.TextField()
     fecha_publicacion = models.DateField()
     fecha_expiracion = models.DateField()
     url = models.TextField()
