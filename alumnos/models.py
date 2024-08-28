@@ -2,6 +2,7 @@ from django.db import models
 from periodos.models import Periodo
 from carreras.models import Carrera
 from estados.models import Estado
+from django.contrib.auth.models import User
 
 
 class Alumno(models.Model):
@@ -18,6 +19,8 @@ class Alumno(models.Model):
     periodo = models.ForeignKey(Periodo, on_delete=models.CASCADE)
     carrera = models.ForeignKey(Carrera, on_delete=models.CASCADE)
     estado = models.ForeignKey(Estado, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return self.nombre
