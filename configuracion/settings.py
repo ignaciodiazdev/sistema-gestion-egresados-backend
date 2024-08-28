@@ -35,6 +35,10 @@ INSTALLED_APPS = [
     'alumnos',
     'alumnos_grados',
     'usuarios',
+    'certificados',
+    'experiencias',
+    'educaciones',
+    'empleos',
     'django_filters',
 ]
 
