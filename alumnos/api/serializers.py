@@ -16,10 +16,3 @@ class AlumnoSerializer(ModelSerializer):
     class Meta:
         model = Alumno
         fields = '__all__'
-
-    def update(self, instance, validated_data):
-        user_data = validated_data.get('user', None)
-        if user_data:
-            instance.user = user_data
-        instance.save()
-        return instance
