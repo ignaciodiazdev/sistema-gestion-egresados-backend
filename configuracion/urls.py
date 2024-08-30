@@ -10,7 +10,7 @@ from estados.api.router import router_estados
 from periodos.api.router import router_periodos
 from alumnos.api.router import router_alumnos
 from alumnos_grados.api.router import router_alumnos_grados
-from usuarios.api.router import router_usuarios
+# from usuarios.api.router import router_usuarios
 from usuarios.api.views import UserView
 from alumnos.api.views import AlumnoDetailView
 from certificados.api.router import router_certificados
@@ -30,9 +30,11 @@ urlpatterns = [
     path('api/', include(router_periodos.urls)),
     path('api/', include(router_alumnos.urls)),
     path('api/', include(router_alumnos_grados.urls)),
-    path('api/', include(router_usuarios.urls)),
+    # path('api/', include(router_usuarios.urls)),
     path('api/', include(router_certificados.urls)),
     path('api/', include(router_experiencias.urls)),
     path('api/', include(router_educaciones.urls)),
     path('api/', include(router_empleos.urls)),
+    # Incluye las rutas de la aplicación de usuarios
+    path('api/', include('usuarios.api.router')),
 ]
